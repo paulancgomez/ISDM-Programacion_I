@@ -31,7 +31,7 @@ Funcion pos <- BusquedaSecuencial (array, N, buscado)
 	FinSi
 FinFuncion
 
-//METODO BUSQUEDA BINARIA (PARA VECTOR ORDENADO)
+//METODO BUSQUEDA BINARIA (PARA VECTOR ORDENADO): No funciona
 Funcion pos <- BusquedaBinaria (array, N, buscado)
 	Definir ini, finn, medio, pos Como Entero
 	ini <- 0
@@ -48,9 +48,6 @@ Funcion pos <- BusquedaBinaria (array, N, buscado)
 			FinSi
 		FinSi
 	FinMientras
-	Si ini >= finn Entonces
-		pos <- -1 //NO SE ENCUENTRA
-	FinSi
 FinFuncion
 
 //METODO ORDENAMIENTO SELECCION (DE MENOR A MAYOR)
