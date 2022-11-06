@@ -219,4 +219,5 @@ Algoritmo Principal
 	
 	Escribir "------------------------- CAPICUA -------------------------"
 	Escribir "¿El numero 12321 es capicua?: ", Capicua(12321)
+	Escribir "Hola"
 FinAlgoritmo
