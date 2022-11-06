@@ -109,7 +109,7 @@ FinFuncion
 Funcion Insercion (array, N Por Referencia, pos, valorInsertar)
 	Definir i Como Entero
 	Para i<-N Hasta pos Con Paso -1 Hacer
-		array[i+1] = array[i]
+		array[i+1] <- array[i]
 	FinPara
 	array[pos] <- valorInsertar
 	N <- N + 1
@@ -127,7 +127,7 @@ FinFuncion
 
 //METODO CAPICUA
 Funcion resp <- Capicua (num)
-	Definir aux, cap Como Entero
+	Definir aux, cap, dig Como Entero
 	Definir resp Como Logico
 	aux <- num
 	cap <- 0
