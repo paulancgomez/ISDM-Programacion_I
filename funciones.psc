@@ -18,14 +18,16 @@ Funcion MuestraArray (array, N)
 FinFuncion
 
 //METODO BUSQUEDA SECUENCIAL (PARA VECTOR DESORDENADO)
-Funcion i <- BusquedaSecuencial (array, N, buscado)
-	Definir i Como Entero
-	i <- 1
-	Mientras i <= N & buscado <> array[i] Hacer
+Funcion pos <- BusquedaSecuencial (array, N, buscado)
+	Definir pos, i Como Entero
+	i <- 0
+	Mientras i < N & array[i] <> buscado Hacer
 		i <- i + 1
 	FinMientras
-	Si i > N Entonces
-		i <- 0
+	Si i < N Entonces
+		pos <- i
+	SiNo
+		pos <- -1
 	FinSi
 FinFuncion
 
@@ -81,16 +83,16 @@ Funcion OrdenamientoInsercion (array, N)
 	FinPara
 FinFuncion
 
-//METODO ORDENAMIENTO SELECCION (DE MENOR A MAYOR)
+//METODO ORDENAMIENTO BURBUJA (DE MENOR A MAYOR)
 Funcion OrdenamientoBurbuja (array, N)
 	Definir i, j Como Entero
 	Definir aux Como Entero
-	Para i<-0 Hasta N-2 Con Paso 1 Hacer
-		Para j<-i+1 Hasta N-1 Con Paso 1 Hacer
-			Si array[i] > array[j] Entonces
-				aux <- array[i]
-				array[i] <- array[j]
-				array[j] <- aux
+	Para i<-1 Hasta N-1 Con Paso 1 Hacer
+		Para j<-0 Hasta (N-1)-i Con Paso 1 Hacer
+			Si array[j] > array[j+1] Entonces
+				aux <- array[j]
+				array[j] <- array[j+1]
+				array[j+1] <- aux
 			FinSi
 		FinPara
 	FinPara
@@ -196,6 +198,14 @@ Algoritmo Principal
 	
 	Escribir "---------------- ORDENAMIENTO SELECCION --------------------"
 	OrdenamientoSeleccion(array, N)
+	MuestraArray(array, N)
+	
+	Escribir "---------------- ORDENAMIENTO INSERCION --------------------"
+	OrdenamientoInsercion(array, N)
+	MuestraArray(array, N)
+	
+	Escribir "---------------- ORDENAMIENTO BURBUJA --------------------"
+	OrdenamientoBurbuja(array, N)
 	MuestraArray(array, N)
 	
 	Escribir "------------ BUSQUEDA SECUENCIAL (BUSCA VALOR 3) -----------"
