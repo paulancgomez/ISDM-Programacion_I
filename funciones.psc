@@ -32,14 +32,17 @@ Funcion pos <- BusquedaSecuencial (array, N, buscado)
 FinFuncion
 
 //METODO BUSQUEDA BINARIA (PARA VECTOR ORDENADO): No funciona
-Funcion pos <- BusquedaBinaria (array, N, buscado)
+Funcion BusquedaBinaria (array, N, buscado)
 	Definir ini, finn, medio, pos Como Entero
+	Definir bandera Como Logico
 	ini <- 0
 	finn <- N
-	Mientras ini < finn Hacer
+	bandera <- Falso
+	Mientras ini < finn & bandera = Falso Hacer
 		medio <- trunc((ini + finn) / 2)
 		Si array[medio] = buscado Entonces
 			pos <- medio
+			bandera <- Verdadero
 		SiNo
 			Si buscado < array[medio] Entonces
 				finn <- medio - 1
@@ -48,6 +51,11 @@ Funcion pos <- BusquedaBinaria (array, N, buscado)
 			FinSi
 		FinSi
 	FinMientras
+	Si bandera Entonces
+		Escribir "El numero ",buscado," está en la posicion ",pos
+	SiNo
+		Escribir "El numero ",buscado," no se encuentra en el array"
+	FinSi
 FinFuncion
 
 //METODO ORDENAMIENTO SELECCION (DE MENOR A MAYOR)
@@ -206,14 +214,6 @@ Algoritmo Principal
 	MuestraArray(array, N)
 	
 	Escribir "------------ BUSQUEDA SECUENCIAL (BUSCA VALOR 3) -----------"
-	posBuscado <- BusquedaSecuencial(array, N, 3)
-	Si posBuscado <> -1 Entonces
-		Escribir "El numero buscado esta en la posicion: ", posBuscado
-	SiNo
-		Escribir "El numero buscado no se encuentró"
-	FinSi
-	
-	Escribir "------------ BUSQUEDA BINARIA (BUSCA VALOR 3) -----------"
 	posBuscado <- BusquedaBinaria(array, N, 3)
 	Si posBuscado <> -1 Entonces
 		Escribir "El numero buscado esta en la posicion: ", posBuscado
