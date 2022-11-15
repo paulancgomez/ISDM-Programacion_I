@@ -213,13 +213,8 @@ Algoritmo Principal
 	OrdenamientoBurbuja(array, N)
 	MuestraArray(array, N)
 	
-	Escribir "------------ BUSQUEDA SECUENCIAL (BUSCA VALOR 3) -----------"
-	posBuscado <- BusquedaBinaria(array, N, 3)
-	Si posBuscado <> -1 Entonces
-		Escribir "El numero buscado esta en la posicion: ", posBuscado
-	SiNo
-		Escribir "El numero buscado no se encuentró"
-	FinSi
+	Escribir "------------ BUSQUEDA BINARIA (BUSCA VALOR 3) -----------"
+	BusquedaBinaria(array, N, 3)
 	
 	Escribir "------------------- CANTIDAD DE DIGITOS -------------------"
 	Escribir "La cantidad de digitos de 1234567 es ", CantDigitos(1234567)
