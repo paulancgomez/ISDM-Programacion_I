@@ -1,21 +1,21 @@
 //INGRESA ARRAY
-Funcion IngresaArray (array, N)
+Proceso IngresaArray (array, N)
 	Definir i Como Entero
 	Para i<-0 Hasta N-1 Con Paso 1 Hacer
 		Escribir "Ingresa Numero: "
 		Leer array[i]
 	FinPara
-FinFuncion
+FinProceso
 
 //MUESTRA ARRAY
-Funcion MuestraArray (array, N)
+Proceso MuestraArray (array, N)
 	Definir i Como Entero
 	Escribir "VECTOR"
 	Para i<-0 Hasta N-1 Con Paso 1 Hacer
 		Escribir array[i], " | " Sin Saltar
 	FinPara
 	Escribir ""
-FinFuncion
+FinProceso
 
 //METODO BUSQUEDA SECUENCIAL (PARA VECTOR DESORDENADO)
 Funcion pos <- BusquedaSecuencial (array, N, buscado)
@@ -32,7 +32,7 @@ Funcion pos <- BusquedaSecuencial (array, N, buscado)
 FinFuncion
 
 //METODO BUSQUEDA BINARIA (PARA VECTOR ORDENADO): No funciona
-Funcion BusquedaBinaria (array, N, buscado)
+Proceso BusquedaBinaria (array, N, buscado)
 	Definir ini, finn, medio, pos Como Entero
 	Definir bandera Como Logico
 	ini <- 0
@@ -56,10 +56,10 @@ Funcion BusquedaBinaria (array, N, buscado)
 	SiNo
 		Escribir "El numero ",buscado," no se encuentra en el array"
 	FinSi
-FinFuncion
+FinProceso
 
 //METODO ORDENAMIENTO SELECCION (DE MENOR A MAYOR)
-Funcion OrdenamientoSeleccion (array, N)
+Proceso OrdenamientoSeleccion (array, N)
 	Definir i, j Como Entero
 	Definir aux Como Entero
 	Para i<-1 Hasta N-1 Con Paso 1 Hacer
@@ -71,10 +71,10 @@ Funcion OrdenamientoSeleccion (array, N)
 			FinSi
 		FinPara
 	FinPara
-FinFuncion
+FinProceso
 
 //METODO ORDENAMIENTO INSERCION (DE MENOR A MAYOR)
-Funcion OrdenamientoInsercion (array, N)
+Proceso OrdenamientoInsercion (array, N)
 	Definir i, j Como Entero
 	Definir actual Como Entero
 	Para i<-1 Hasta N-1 Con Paso 1 Hacer
@@ -86,10 +86,10 @@ Funcion OrdenamientoInsercion (array, N)
 		FinMientras
 		array[j] <- actual
 	FinPara
-FinFuncion
+FinProceso
 
 //METODO ORDENAMIENTO BURBUJA (DE MENOR A MAYOR)
-Funcion OrdenamientoBurbuja (array, N)
+Proceso OrdenamientoBurbuja (array, N)
 	Definir i, j Como Entero
 	Definir aux Como Entero
 	Para i<-1 Hasta N-1 Con Paso 1 Hacer
@@ -101,26 +101,26 @@ Funcion OrdenamientoBurbuja (array, N)
 			FinSi
 		FinPara
 	FinPara
-FinFuncion
+FinProceso
 
 //METODO ELIMINACION (ELIMINAR POSICION)
-Funcion Eliminacion (array, N Por Referencia, pos)
+Proceso Eliminacion (array, N Por Referencia, pos)
 	Definir i Como Entero
 	Para i<-pos Hasta N-2 Con Paso 1 Hacer
 		array[i] <- array[i+1]
 	FinPara
 	N <- N - 1
-FinFuncion
+FinProceso
 
 //METODO INSERCION
-Funcion Insercion (array, N Por Referencia, pos, valorInsertar)
+Proceso Insercion (array, N Por Referencia, pos, valorInsertar)
 	Definir i Como Entero
 	Para i<-N Hasta pos Con Paso -1 Hacer
 		array[i+1] <- array[i]
 	FinPara
 	array[pos] <- valorInsertar
 	N <- N + 1
-FinFuncion
+FinProceso
 
 //METODO CANTIDAD DE DIGITOS
 Funcion cant <- CantDigitos (num)
